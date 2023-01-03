@@ -42,10 +42,7 @@ function getAllUsers(urlUsers){
     });
 
     });
-
 }
-
-
 //Get All Posts
 let urlPosts ="https://jsonplaceholder.typicode.com/posts";
 function getAllPosts(urlPosts){
@@ -65,29 +62,6 @@ function getAllPosts(urlPosts){
         theAllPostsDiv.innerHTML = thePostDivContent;  
     }).catch(err => console.log(err));
 }
-
-//Get All Posts After Get All Users Using Promises
-/* function getPostsAfterUsers(){
-    return new Promise((resolve, reject) => {
-        resolve(getAllUsers(urlUsers));
-        reject(Error + "Fail To Get Users");
-    });
-}
-
-getPostsAfterUsers().then(usersData => {
-    usersData 
-    getAllPosts(urlPosts);
-}).catch(err => console.log(err));
-
- */
-/* getAllUsers(urlUsers).then(dataUsers => {
-    dataUsers;
-   console.log(dataUsers);
-}).then( dataPosts => {
-    dataPosts;
-}).catch(err => console.log(err));
- */
-
 
  //Get Posts By UserId
 function showPostsByUserId(userId,divThis){
@@ -122,15 +96,7 @@ theonlyPosts.addEventListener("click", ()=>{
     thegoBack[1].style.display="inline";
 });
 
-//Call Functions
-//  getAllUsers(urlUsers);
-//  getAllPosts(urlPosts);
- 
-
  //Get All Posts After Get All Users Using Promises
 getAllUsers(urlUsers).then(()=>{
     getAllPosts(urlPosts);
 }).catch(err => console.log(err));
-
-
-
